@@ -1,7 +1,9 @@
 [supervisord]
 nodaemon = {{ supervisor_nodaemon }}
+logfile = {{ supervisor_log_dir }}/supervisord.log
 childlogdir = {{ supervisor_log_dir }}
 user = {{ supervisor_user }}
+pidfile = /var/run/supervisord.pid
 
 {% if supervisor_unix_http_server_enable %}
 [unix_http_server]
